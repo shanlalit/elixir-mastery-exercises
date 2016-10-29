@@ -1,8 +1,10 @@
-## Exercise 1
+Exercise 1
+==========
 
 Create a new phoenix project called 'leaderboard'.
 
-## Exercise 2
+Exercise 2
+==========
 
 ```text
 It helps to have Postgres installed. If you don't want to install it, you may

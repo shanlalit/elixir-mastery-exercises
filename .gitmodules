@@ -1,0 +1,3 @@
+[submodule "DroidStore"]
+	path = day-2/DroidStore
+	url = https://github.com/jkrmr/DroidStore.git

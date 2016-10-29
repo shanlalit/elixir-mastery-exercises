@@ -1,5 +1,4 @@
 defmodule Cats do
-
   @prefix "/tmp"
 
   def make do
@@ -7,7 +6,6 @@ defmodule Cats do
   end
 
   def cats do
-
     [
       [state: "Virginia",
         cats: [[name: "Felix", age: 7],
@@ -42,7 +40,6 @@ defmodule Cats do
     cats |> Enum.map(&(mk_cat(state, &1)))
     mk(t)
   end
-
 end
 
 Cats.make

@@ -1,8 +1,11 @@
-## Releases exercises
+Releases exercises
+==================
 
-* Generate a new mix project. Create a relelease for the project. Install it and run it.
+* Generate a new mix project. Create a relelease for the project. Install it and
+  run it.
 
-### Advanced
+Advanced
+========
 
 * Upgrade your release to a new version without stopping the running process.
 
