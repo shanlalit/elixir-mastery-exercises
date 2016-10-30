@@ -1,10 +1,14 @@
-## Reading Excercises
+Reading Excercises
+==================
+
 * Spend some time in iex looking at the functions for
   Map, List, Keyword. For example, type in Map and then ```.```
   and then hit tab. Read the doc for some eg: ```h List.delete```
 
-## List Exercises
-* Create a list with six star wars characters
+List Exercises
+--------------
+
+* Create a list with six star wars characters (each a kw-list / list of tuples)
 
 ```elixir
 list1 = [
@@ -13,7 +17,7 @@ list1 = [
   [first: "Luke", last: "Skywalker"],
   [first: "Darth", last: "Vader"],
   [first: "Obi-Wan", last: "Kenobi"],
-  [first: "Chewbaccs", last: "Gottlieb"]
+  [first: "Chewbacca", last: "Gottlieb"]
 ]
 ```
 
@@ -41,7 +45,7 @@ list3 = list1 ++ list2
 * Delete the seventh character
 
 ```elixir
-list3 |> List.delete(6)
+list3 |> List.delete_at(6)
 ```
 
 * Add one more character to the list
@@ -54,7 +58,6 @@ list4 = [jake | list3]
 
 ```elixir
 jake in list4
-# true
 ```
 
 ## Map exercises
@@ -73,7 +76,6 @@ jake in list4
 
   ```elixir
   characters |> Map.values |> Enum.map(&(&1.name))
-  # ["Luke", "Vader"]
   ```
 
   ```elixir
@@ -84,28 +86,31 @@ jake in list4
 * Add a weight to each character
 
   ```elixir
-  # TODO
+  keys = Map.keys(characters)
+  values = Map.values(characters)
+  values_with_weight = Enum.map(values, &(Map.put(&1, :weight, 180)))
+
+  characters = Enum.zip(keys, values_with_weight) |> Map.new
   ```
 
 * Update the alliance to its opposite
 
   ```elixir
-  # TODO
+  IO.puts "No."
   ```
 
 * Create a LOM: list of maps of three characters
 
   ```elixir
   details = characters |> Map.values
-  # [%{name: "Luke", side: :rebel}, %{name: "Vader", side: :imperial}]
   ```
 
 * Update or replace the second item in the list  with
   'Jabba the Hutt' and :scum or :criminal as the side
 
   ```elixir
-  details |> List.replace_at(1, %{name: "Jabba the Hutt", side: :criminal})
-  # [%{name: "Luke", side: :rebel}, %{name: "Jabba the Hutt", side: :criminal}]
+  List.replace_at details, 1,
+    %{name: "Jabba the Hutt", weigth: 250, side: :criminal}
   ```
 
 * [Answers](https://gist.github.com/MonkeyIsNull/8b26a6a05ba0d54b13cf)

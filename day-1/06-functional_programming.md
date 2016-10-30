@@ -52,7 +52,7 @@ defmodule DataParser do
   end
 end
 
-DataParser.unique_first_of_fifth(data)
+DataParser.unique_first_of_fifth(log)
 # ["Open", "Asset", "Core", "Xcode", "_launchservicesd"]
 ```
 
@@ -104,8 +104,38 @@ Exercise 3
 ============
 
 Without looking at the slides, code the implementation for map, filter and
-reduce. Wikipedia has implementations that are close so you can use those if
-you're stuck. Reduce is also called fold. Answers: slides
+reduce. Reduce is also called fold. Answers: slides
 
 ```elixir
+defmodule EnumComprehended do
+  def map(collection, function) do
+    for x <- collection, do: function.(x)
+  end
+
+  def filter(collection, function) do
+    for x <- collection, function.(x), do: x
+  end
+end
+
+defmodule EnumRecursive do
+  def map([], _), do: []
+  def map([head | tail], function) do
+    [function.(head) | map(tail, function)]
+  end
+
+  def filter([], _), do: []
+  def filter([head | tail], function) do
+    if function.(head) do
+      [head | filter(tail, function)]
+    else
+      filter(tail, function)
+    end
+  end
+
+  def reduce([], accumulator, _), do: accumulator
+  def reduce([x|xs], accumulator, function) do
+    new_accumulator = function.(x, accumulator)
+    reduce(xs, new_accumulator, function)
+  end
+end
 ```

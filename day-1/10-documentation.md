@@ -1,4 +1,5 @@
-## Exercise 1
+Exercise 1
+==========
 
 * Create a new mix project and add module documentation to it. Generate the html
   files.
@@ -24,7 +25,8 @@ defmodule Redpull do
 end
 ```
 
-## Exercise 2
+Exercise 2
+==========
 
 * Add function documentation to the mix project and generate the updated html
   files
@@ -62,6 +64,5 @@ end
     Docs successfully generated.
     View them at "doc/index.html".
   ```
-
 
 [Answer](https://gist.github.com/brweber2/9c888641bdb4892cf4c65683164ef527)

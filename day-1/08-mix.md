@@ -1,4 +1,5 @@
-## Exercise 1
+Exercise 1
+==========
 
 * Create a new mix project called 'redpull'
 
@@ -6,7 +7,8 @@
 mix new redpull
 ```
 
-## Exercise 2
+Exercise 2
+==========
 
 * Compile the project and identify the files that were created
 
@@ -14,7 +16,8 @@ mix new redpull
 mix compile
 ```
 
-## Exercise 3
+Exercise 3
+==========
 
 * Run the tests. What does the dot mean?
 
@@ -47,7 +50,8 @@ redpull master % mix test
 NB: Color-coded output is trivially easy in Elixir
 Standard library provides `ANSI` something or other
 
-## Exercise 4
+Exercise 4
+==========
 
 * Make your own Hello World mix task
 
@@ -65,7 +69,8 @@ defmodule Mix.Tasks.Greeting do
 end
 ```
 
-## Exercise 5 (BONUS)
+Exercise 5 (BONUS)
+==================
 
 * Build an escript and run it
 ```exs
